@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: db968b9d9295f9b4299d9e6f0e2c97e9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/plat-1T-dirt1
+    to neutral/platform-1T-dirt1 to neutral_24.asset
+  uploadId: 732769

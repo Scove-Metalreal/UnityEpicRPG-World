@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 44ea1a85552025a4a8afbe82f24522d0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/plowed
+    soil/plowed soil_10.asset
+  uploadId: 732769

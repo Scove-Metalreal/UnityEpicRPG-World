@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eeb737e86ca668c4c8af04632706c70e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Props/anims/TrainingDummy.controller
+  uploadId: 732769

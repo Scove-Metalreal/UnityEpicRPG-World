@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 22d6dc46c4d2db542b6cf0ccf7c673b2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/stone
+    path lighter-transp/stone path lighter - transparency_43.asset
+  uploadId: 732769

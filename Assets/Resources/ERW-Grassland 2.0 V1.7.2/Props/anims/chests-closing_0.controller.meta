@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d20d829282f366b4da5f43801a2c4ca3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Props/anims/chests-closing_0.controller
+  uploadId: 732769

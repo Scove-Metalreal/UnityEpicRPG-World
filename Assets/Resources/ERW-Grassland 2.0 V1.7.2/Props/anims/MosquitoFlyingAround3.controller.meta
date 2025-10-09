@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e30d9c563b8744445ba76b56e3eb1d65
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Props/anims/MosquitoFlyingAround3.controller
+  uploadId: 732769

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 70cf20df51c82df419a13f17b05d73ed
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Props/anims/campfire1.controller
+  uploadId: 732769

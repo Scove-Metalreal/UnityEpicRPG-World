@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 98068e2f83a403d43bf7af7288916b2f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/stone
+    path darker-transp/stone path darker - transparency_15.asset
+  uploadId: 732769
