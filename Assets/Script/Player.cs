@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
     Rigidbody2D rigid;
+    SpriteRenderer spriter;
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriter = GetComponent<SpriteRenderer>();
     }
 
     // FixedUpdate duoc goi theo khoang thoi gian co dinh, tuy vao toc do khung hinh
@@ -27,5 +29,15 @@ public class Player : MonoBehaviour
     void OnMove(InputValue value)
     {
         inputVec = value.Get<Vector2>();
+    }
+
+    void LateUpdate()
+    {
+        animator.SetFloat("Speed", inputVec.magnitude);
+
+        if (inputVec.x != 0) 
+        {
+            spriter.flipX = inputVec.x < 0;
+        }
     }
 }
