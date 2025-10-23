@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     
     public Vector2 inputVec;
     public float speed;
+
+    public Scanner scanner;
+
     Rigidbody2D rigid;
     SpriteRenderer spriter;
     void Awake()
@@ -14,6 +17,7 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
+        scanner = GetComponent<Scanner>();
     }
 
     // FixedUpdate duoc goi theo khoang thoi gian co dinh, tuy vao toc do khung hinh
