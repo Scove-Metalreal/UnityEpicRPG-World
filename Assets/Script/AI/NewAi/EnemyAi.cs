@@ -68,7 +68,8 @@ public class EnemyAi : MonoBehaviour
             case State.Attack:
                 // Neu khoang cach nguoi choi gan float attackRang thi thuc hien tan cong
 
-                motor.AttackPlayer();
+                motor.Attack();
+                motor.PlaySkillEffect();
 
                 if (Vector2.Distance(transform.position, player.position) > attackRange)
                 {

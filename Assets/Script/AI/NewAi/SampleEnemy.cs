@@ -1,22 +1,22 @@
 using UnityEngine;
 
-public class SampleEnemy : MonoBehaviour
+public abstract class SampleEnemy : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private Rigidbody2D rb;
-    private Animator anim;
+    public Rigidbody2D rb; // Cap nhat o FireWeapon
+    public Animator anim;
 
-    private Vector2 lastPosition;
-    private SpriteRenderer sr;
+    private Vector2 lastPosition; // Cap nhat o FireWeapon
+    protected SpriteRenderer sr;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         lastPosition = rb.position;
     }
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // Set bool if isWalking based on actual movement speed
         if (Vector2.Distance(rb.position, lastPosition) > 0.001f)
@@ -27,30 +27,26 @@ public class SampleEnemy : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-        // Co le nen de animation o trong class EnemyAI phan switch state
 
         lastPosition = rb.position;
     }
-    public void MoveTo(Vector2 targetPos)
+    public virtual void MoveTo(Vector2 targetPos)
     {
         Vector2 direction = (targetPos - rb.position).normalized;
         if (direction.x > 0)
         {
-            sr.flipX = false;
+            transform.localScale = new Vector3(2.07f, 2.07f, 2.07f);
         }
         else if (direction.x < 0)
         {
-            sr.flipX = true;
+            transform.localScale = new Vector3(-2.07f, 2.07f, 2.07f);
         }
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
-    public void AttackPlayer()
-    {
-        rb.linearVelocity = Vector2.zero;
-        anim.SetTrigger("Attack");
-    }
-    public void Stop()
+    public virtual void Stop()
     {
         rb.linearVelocity = Vector2.zero;
     }
+    public abstract void Attack();
+    public abstract void PlaySkillEffect();
 }
