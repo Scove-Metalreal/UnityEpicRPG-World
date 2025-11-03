@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - FontObject
+  - Enemies
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: Ground2
     uniqueID: 963865043
+    locked: 0
+  - name: LowGround2.5
+    uniqueID: 2363714939
     locked: 0
   - name: WalkInfont3
     uniqueID: 225792513
