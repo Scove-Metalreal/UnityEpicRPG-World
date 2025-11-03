@@ -14,7 +14,7 @@ public class MeleeHitBox : MonoBehaviour
         var playerHealth = collision.GetComponent<Bandit>();
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(damage);
+            playerHealth.Damage(damage);
         }
     }
 }
