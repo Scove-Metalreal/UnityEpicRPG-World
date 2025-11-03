@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c955559a137cef9418b4dcba3e9caf47
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/grass
+    to transp/grass to transaprency_26.asset
+  uploadId: 732769

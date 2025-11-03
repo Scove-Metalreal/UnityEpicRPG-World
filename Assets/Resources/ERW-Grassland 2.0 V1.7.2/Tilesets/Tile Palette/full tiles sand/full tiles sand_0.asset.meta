@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 03af8d47e7028d84094d8f6f23f7b0b0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/full
+    tiles sand/full tiles sand_0.asset
+  uploadId: 732769

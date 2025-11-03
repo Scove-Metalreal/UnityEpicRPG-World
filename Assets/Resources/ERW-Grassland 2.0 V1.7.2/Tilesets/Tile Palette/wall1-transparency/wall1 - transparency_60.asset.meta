@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: df07af8165231b24eb47d52d83c6b531
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/wall1-transparency/wall1
+    - transparency_60.asset
+  uploadId: 732769

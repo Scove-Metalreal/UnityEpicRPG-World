@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7d28f6d0bbfc23842b07610b5fe63a5c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/base
+    grass - tiles/base grass_15.asset
+  uploadId: 732769

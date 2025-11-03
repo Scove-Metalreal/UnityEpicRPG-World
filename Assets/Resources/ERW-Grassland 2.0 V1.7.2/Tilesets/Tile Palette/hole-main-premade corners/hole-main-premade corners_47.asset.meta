@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fa1b5e5652a46054da7df731b7d93b0d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/hole-main-premade
+    corners/hole-main-premade corners_47.asset
+  uploadId: 732769

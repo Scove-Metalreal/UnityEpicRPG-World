@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c2852c4434ab1934884fb5acbb339596
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/wall1-premade
+    corners/wall-1-premade corners_16.asset
+  uploadId: 732769

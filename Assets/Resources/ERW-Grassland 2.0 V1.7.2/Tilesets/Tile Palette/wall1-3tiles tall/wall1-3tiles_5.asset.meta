@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd685422fee64c14c8ed1df0e994e410
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Tile Palette/wall1-3tiles
+    tall/wall1-3tiles_5.asset
+  uploadId: 732769

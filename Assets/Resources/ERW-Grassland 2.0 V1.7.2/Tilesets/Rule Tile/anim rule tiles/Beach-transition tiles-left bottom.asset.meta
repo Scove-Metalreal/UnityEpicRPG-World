@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 2231a4d4f81b75849a7fc50de49b9357
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/Tilesets/Rule Tile/anim rule
+    tiles/Beach-transition tiles-left bottom.asset
+  uploadId: 732769

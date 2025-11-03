@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ce6ec5db4ae948e4ca32e6fe0c67e280
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267533
+  packageName: Epic RPG World - Grass Land 2.0
+  packageVersion: 1.7.2
+  assetPath: Assets/Resources/ERW-Grassland 2.0 V1.7.2/TiledMap Editor/rules.txt
+  uploadId: 732769
