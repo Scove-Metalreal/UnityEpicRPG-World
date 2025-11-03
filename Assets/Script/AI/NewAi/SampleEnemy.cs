@@ -1,9 +1,10 @@
+using CodeMonkey.HealthSystemCM;
 using UnityEngine;
 
-public abstract class SampleEnemy : MonoBehaviour
+public abstract class SampleEnemy : MonoBehaviour, IGetHealthSystem
 {
-    public int maxHealth = 100;
-    int currentHealth;
+    //public int maxHealth = 100;
+    //int currentHealth;
 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
@@ -12,16 +13,20 @@ public abstract class SampleEnemy : MonoBehaviour
     private Vector2 lastPosition;
     protected SpriteRenderer sr;
 
+    private HealthSystem healthSystem;
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         lastPosition = rb.position;
+
+        healthSystem = new HealthSystem(100);
+        healthSystem.OnDead += HealthSystem_OnDead;
     }
     public virtual void Start()
     {
-        currentHealth = maxHealth;
+        // currentHealth = maxHealth;
     }
     protected virtual void FixedUpdate()
     {
@@ -36,18 +41,18 @@ public abstract class SampleEnemy : MonoBehaviour
 
         lastPosition = rb.position;
     }
-    public virtual void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-    public virtual void Die()
-    {
-        Debug.Log("Enemy Died");
-    }
+    //public virtual void TakeDamage(int damage)
+    //{
+    //    currentHealth -= damage;
+    //    if (currentHealth <= 0)
+    //    {
+    //        Die();
+    //    }
+    //}
+    //public virtual void Die()
+    //{
+    //    Debug.Log("Enemy Died");
+    //}
     public virtual void MoveTo(Vector2 targetPos)
     {
         Vector2 direction = (targetPos - rb.position).normalized;
@@ -67,4 +72,17 @@ public abstract class SampleEnemy : MonoBehaviour
     }
     public abstract void Attack(Vector2 pos, float attackRange);
     public abstract void PlaySkillEffect(Vector2 targetPos);
+    public void Damage(int damage)
+    {
+        healthSystem.Damage(40);
+    }
+    private void HealthSystem_OnDead(object sender, System.EventArgs e)
+    {
+        anim.SetTrigger("Death");
+        Destroy(gameObject, 1f);
+    }
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
+    }
 }

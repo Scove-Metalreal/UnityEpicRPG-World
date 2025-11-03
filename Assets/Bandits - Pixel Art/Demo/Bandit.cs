@@ -1,24 +1,31 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using CodeMonkey.HealthSystemCM;
 
-public class Bandit : MonoBehaviour
+public class Bandit : MonoBehaviour, IGetHealthSystem
 {
     public Vector2 inputVec;
-    public Animator            m_animator;
+    public Animator             m_animator;
     private Rigidbody2D         m_body2d;
     [SerializeField] float      m_speed = 4.0f;
-    public int maxHealth = 100;
-    int currentHealth;
+    private HealthSystem        healthSystem;
+    // public int maxHealth = 100;
+    // int currentHealth;
 
     public bool                m_combatIdle = false;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        healthSystem = new HealthSystem(100);
+
+        healthSystem.OnDead += HealthSystem_OnDead;
+    }
     void Start () {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         
-        currentHealth = maxHealth;
+        // currentHealth = maxHealth;
     }
 	
 	// Update is called once per frame
@@ -122,16 +129,25 @@ public class Bandit : MonoBehaviour
             transform.localScale = new Vector3(flipX, 1, 1);
         }
     }
-    public void TakeDamage(int damage)
+    //public void TakeDamage(int damage)
+    //{
+    //    currentHealth -= damage;
+    //    if (currentHealth <= 0)
+    //    {
+    //        Die();
+    //    }
+    //}
+    public void Damage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        healthSystem.Damage(40);
     }
-    void Die()
+    private void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
-        Debug.Log("Player Died");
+        m_animator.SetTrigger("Death");
+        Destroy(gameObject, 1f);
+    }
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 }

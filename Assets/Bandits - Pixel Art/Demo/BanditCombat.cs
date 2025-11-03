@@ -49,7 +49,7 @@ public class BanditCombat : MonoBehaviour
             var enemyScript = enemy.GetComponentInParent<SampleEnemy>();
             if (enemyScript != null)
             {
-                enemyScript.TakeDamage(attackDamage);
+                enemyScript.Damage(attackDamage);
             }
         }
     }
