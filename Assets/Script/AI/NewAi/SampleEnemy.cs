@@ -78,7 +78,7 @@ public abstract class SampleEnemy : MonoBehaviour, IGetHealthSystem
     }
     private void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
-        anim.SetTrigger("Death");
+        anim.SetBool("Dead", true);
         Destroy(gameObject, 1f);
     }
     public HealthSystem GetHealthSystem()

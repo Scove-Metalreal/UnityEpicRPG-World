@@ -35,7 +35,7 @@ public class FireWeapon : SampleEnemy
         }
         else
         {
-            anim.SetTrigger("Attack"); 
+            anim.SetTrigger("Attack");
 
             EnableHitbox();
             Invoke(nameof(DisableHitbox), 0.3f);

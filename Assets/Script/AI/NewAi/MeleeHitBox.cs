@@ -15,6 +15,7 @@ public class MeleeHitBox : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.Damage(damage);
+            Debug.Log("Player Hit for " + damage + " damage.");
         }
     }
 }
