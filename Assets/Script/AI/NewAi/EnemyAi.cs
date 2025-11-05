@@ -14,7 +14,7 @@ public class EnemyAi : MonoBehaviour
 
     }
     private State state;
-    private SampleEnemy motor;
+    private AbstractEnemy motor;
 
     // Khai bao vi tri
     private Vector2 startPos;
@@ -27,7 +27,7 @@ public class EnemyAi : MonoBehaviour
     public float attackRange = 3f;
     private void Awake()
     {
-        motor = GetComponent<SampleEnemy>();
+        motor = GetComponent<AbstractEnemy>();
         state = State.Roaming;
     }
     private void Start()
@@ -68,8 +68,12 @@ public class EnemyAi : MonoBehaviour
                 break;
             case State.Attack:
 
+                // To set a new Vector2 with the player's position and add 0.45f to the Y value:
+                Vector2 targetPos = new Vector2(player.position.x, player.position.y + 0.45f);
+
+                // Example usage in your code:
                 motor.Attack(transform.position, attackRange);
-                motor.PlaySkillEffect(player.position);
+                motor.PlaySkillEffect(targetPos);
 
                 if (Vector2.Distance(transform.position, player.position) > attackRange)
                 {

@@ -1,7 +1,7 @@
 using CodeMonkey.HealthSystemCM;
 using UnityEngine;
 
-public abstract class SampleEnemy : MonoBehaviour, IGetHealthSystem
+public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
 {
     //public int maxHealth = 100;
     //int currentHealth;

@@ -9,12 +9,10 @@ public class MeleeHitBox : MonoBehaviour
     public void DisableHitBox() => active = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!active) return;
+        // if (!active) return;
 
-        var playerHealth = collision.GetComponent<Bandit>();
-        if (playerHealth != null)
+        if (collision.CompareTag("Player"))
         {
-            playerHealth.Damage(damage);
             Debug.Log("Player Hit for " + damage + " damage.");
         }
     }

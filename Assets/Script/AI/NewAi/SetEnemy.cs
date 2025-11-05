@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FireWeapon : SampleEnemy
+public class SetEnemy : AbstractEnemy
 {
 
     [SerializeField] private MeleeHitBox meleeHitbox;
@@ -14,8 +14,6 @@ public class FireWeapon : SampleEnemy
     protected override void Awake()
     {
         base.Awake();
-        //if (skillanimator == null)
-        //   skillanimator = getcomponentinchildren<animator>();
     }
     public override void Start()
     {
@@ -30,15 +28,16 @@ public class FireWeapon : SampleEnemy
         {
             anim.SetTrigger("Attack2");
 
-            EnableHitbox();
-            Invoke(nameof(DisableHitbox), 0.3f);
+            meleeHitbox.EnableHitBox();
+            // EnableHitbox();
+            // Invoke(nameof(DisableHitbox), 0.3f);
         }
         else
         {
             anim.SetTrigger("Attack");
 
-            EnableHitbox();
-            Invoke(nameof(DisableHitbox), 0.3f);
+            // EnableHitbox();
+            // Invoke(nameof(DisableHitbox), 0.3f);
         }
             
     }
@@ -64,7 +63,7 @@ public class FireWeapon : SampleEnemy
         }
         GameObject skillFx = Instantiate(projectilePrefab, targetPos, Quaternion.identity);
         SkillEffect effect = projectilePrefab.GetComponent<SkillEffect>();
-        // Coi chung bi null o day
+
         effect.target = player;
         Animator fxAnim = skillFx.GetComponent<Animator>();
         if (skill1Count < 3)
@@ -79,9 +78,3 @@ public class FireWeapon : SampleEnemy
         }
     }
 }
-
-// Dau tien la state Attack trong EnemyAI 
-
-// Khi vao state Attack thi goi ham Fire() trong class FireWeapon
-// Bat dau goi anim cua FireWeapon
-// Goi ham Fire() khi rigidbody cua FireWeapon den 1 vi tri nhu la Player neu dinh player thi set health player -5

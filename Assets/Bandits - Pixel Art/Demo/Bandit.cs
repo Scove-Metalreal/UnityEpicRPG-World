@@ -108,6 +108,11 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     }
     void FixedUpdate()
     {
+        // Stop movement during attack
+        if (m_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            return;
+        }
         Vector2 nextVec = inputVec * m_speed * Time.fixedDeltaTime;
         m_body2d.MovePosition(m_body2d.position + nextVec);
         //Run
@@ -120,7 +125,7 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     }
     void LateUpdate()
     {
-        m_animator.SetFloat("Speed", inputVec.magnitude);
+        // m_animator.SetFloat("Speed", inputVec.magnitude);
 
         if (inputVec.x != 0)
         {
