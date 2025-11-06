@@ -47,9 +47,13 @@ public class BanditCombat : MonoBehaviour
         {
             player.m_animator.SetTrigger("Attack");
         }
-
+    }
+    public void DealDamage()
+    {
+        // Detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
+        // Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
             var enemyScript = enemy.GetComponentInParent<AbstractEnemy>();

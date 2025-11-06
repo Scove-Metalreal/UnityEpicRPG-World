@@ -3,17 +3,15 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
 {
-    //public int maxHealth = 100;
-    //int currentHealth;
-
     public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public Animator anim;
 
-    private Vector2 lastPosition;
+    protected Rigidbody2D rb;
+    protected Animator anim;
     protected SpriteRenderer sr;
 
+    private Vector2 lastPosition;
     private HealthSystem healthSystem;
+
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,35 +22,17 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
         healthSystem = new HealthSystem(100);
         healthSystem.OnDead += HealthSystem_OnDead;
     }
-    public virtual void Start()
+    protected virtual void Start()
     {
-        // currentHealth = maxHealth;
+
     }
     protected virtual void FixedUpdate()
     {
-        if (Vector2.Distance(rb.position, lastPosition) > 0.001f)
-        {
-            anim.SetBool("isWalking", true);
-        }
-        else
-        {
-            anim.SetBool("isWalking", false);
-        }
+        bool isWalking = Vector2.Distance(rb.position, lastPosition) > 0.001f;
+        anim.SetBool("isWalking", isWalking);
 
         lastPosition = rb.position;
     }
-    //public virtual void TakeDamage(int damage)
-    //{
-    //    currentHealth -= damage;
-    //    if (currentHealth <= 0)
-    //    {
-    //        Die();
-    //    }
-    //}
-    //public virtual void Die()
-    //{
-    //    Debug.Log("Enemy Died");
-    //}
     public virtual void MoveTo(Vector2 targetPos)
     {
         Vector2 direction = (targetPos - rb.position).normalized;
@@ -70,19 +50,17 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     {
         rb.linearVelocity = Vector2.zero;
     }
-    public abstract void Attack(Vector2 pos, float attackRange);
-    public abstract void PlaySkillEffect(Vector2 targetPos);
     public void Damage(int damage)
     {
-        healthSystem.Damage(40);
+        healthSystem.Damage(damage);
     }
     private void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
         anim.SetBool("Dead", true);
+        Stop();
         Destroy(gameObject, 1f);
     }
-    public HealthSystem GetHealthSystem()
-    {
-        return healthSystem;
-    }
+    public HealthSystem GetHealthSystem() => healthSystem;
+    public abstract void Attack(Vector2 pos, float attackRange);
+    public abstract void PlaySkillEffect(Vector2 targetPos);
 }
