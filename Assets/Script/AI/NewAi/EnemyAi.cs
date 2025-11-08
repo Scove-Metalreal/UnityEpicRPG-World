@@ -25,6 +25,7 @@ public class EnemyAi : MonoBehaviour
     public float detectRange = 5f;
     public float loseRange = 8f;
     public float attackRange = 3f;
+    [SerializeField] private bool isMage = false;
     private void Awake()
     {
         motor = GetComponent<AbstractEnemy>();
@@ -61,17 +62,26 @@ public class EnemyAi : MonoBehaviour
                     roamPos = GetRoamPosition();
                 }
 
-                if (Vector2.Distance(transform.position, player.position) < attackRange)
+                if (isMage)
                 {
-                    state = State.Attack;
+                    if (Vector2.Distance(transform.position, player.position) < attackRange)
+                    {
+                        state = State.Attack;
+                    }
                 }
+                else
+                {
+                    if (Vector2.Distance(transform.position, player.position) < attackRange - 2.5f)
+                    {
+                        state = State.Attack;
+                    }
+                }
+
                 break;
             case State.Attack:
                 Vector2 targetPos = new Vector2(player.position.x, player.position.y + 0.45f);
 
                 motor.Attack(transform.position, attackRange);
-                motor.PlaySkillEffect(targetPos);
-
                 if (Vector2.Distance(transform.position, player.position) > attackRange)
                 {
                     state = State.Chasing;

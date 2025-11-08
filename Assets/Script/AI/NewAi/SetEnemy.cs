@@ -40,6 +40,7 @@ public class SetEnemy : AbstractEnemy
         else
         {
             anim.SetTrigger("Attack");
+            PlaySkillEffect(player.position);
         }
     }
     public void EnableHitbox() => meleeHitbox.EnableHitBox();
@@ -54,7 +55,8 @@ public class SetEnemy : AbstractEnemy
             Debug.LogError("projectilePrefab is missing!");
             return;
         }
-        GameObject skillFx = Instantiate(projectilePrefab, targetPos, Quaternion.identity);
+
+        GameObject skillFx = Instantiate(projectilePrefab, targetPos + new Vector2(0, 0.45f), Quaternion.identity);
         SkillEffect effect = projectilePrefab.GetComponent<SkillEffect>();
 
         if (effect != null)
