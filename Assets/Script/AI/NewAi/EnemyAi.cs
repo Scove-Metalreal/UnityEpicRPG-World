@@ -54,7 +54,7 @@ public class EnemyAi : MonoBehaviour
                 break;
 
             case State.Chasing:
-                motor.MoveTo(player.position);
+                motor.MoveTo(new Vector2(player.position.x + 0.5f, player.position.y + 0.45f));
 
                 if (Vector2.Distance(transform.position, player.position) > loseRange)
                 {
@@ -71,7 +71,7 @@ public class EnemyAi : MonoBehaviour
                 }
                 else
                 {
-                    if (Vector2.Distance(transform.position, player.position) < attackRange - 2.5f)
+                    if (Vector2.Distance(transform.position, player.position) < attackRange - 2f)
                     {
                         state = State.Attack;
                     }

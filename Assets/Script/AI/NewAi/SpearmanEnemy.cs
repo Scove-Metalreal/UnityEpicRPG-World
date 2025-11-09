@@ -14,7 +14,6 @@ public class SpearmanEnemy : AbstractEnemy
     private Transform player;
     private float lastAttackTime = -999f;
     private float lastSkillTime = -999f;
-    private int skill1Count = 0;
     protected override void Awake()
     {
         base.Awake();
@@ -28,23 +27,25 @@ public class SpearmanEnemy : AbstractEnemy
     {
         float distance = Vector2.Distance(pos, player.position);
 
-        if (Time.time < lastAttackTime + attackCooldown) { return; }
-        else if (Time.time >= lastSkillTime + skillCooldown && skill1Count < 2)
+        if (Time.time < lastAttackTime + attackCooldown && Time.time < lastSkillTime + skillCooldown) { return; }
+        
+        
+        if (Time.time >= lastSkillTime + skillCooldown)
+        {
+            anim.SetTrigger("Attack2");
+            Debug.Log("Spin Attack Activated");
+            StartCoroutine(SpinAttack());
+            lastSkillTime = Time.time;
+        }
+        else if (Time.time >= lastAttackTime + attackCooldown)
         {
             anim.SetTrigger("Attack");
             // Stop
             lastAttackTime = Time.time;
         }
-        else
-        {
-            Debug.Log("1");
-            if (distance < attackRange)
-            {
-                Debug.Log("2");
-                anim.SetTrigger("Attack2");
-            }
-        }
     }
+    public void EnableHitbox() => meleeHitbox.EnableHitBox();
+    public void DisableHitbox() => meleeHitbox.DisableHitBox();
     public override void PlaySkillEffect(Vector2 targetPos) { }
     private IEnumerator SpinAttack()
     {
