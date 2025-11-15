@@ -6,11 +6,12 @@ using CodeMonkey.HealthSystemCM;
 public class Bandit : MonoBehaviour, IGetHealthSystem
 {
     public Vector2 inputVec;
-    public bool                m_combatIdle = false;
+    public bool                 m_combatIdle = false;
     public Animator             m_animator;
     private Rigidbody2D         m_body2d;
     [SerializeField] float      m_speed = 4.0f;
     private HealthSystem        healthSystem;
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -131,11 +132,38 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     }
     private void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
-        m_animator.SetTrigger("Death");
-        Destroy(gameObject, 1f);
+        if (isDead) return;
+        isDead = true;
+
+        StartCoroutine(RespawnRoutine());
     }
     public HealthSystem GetHealthSystem()
     {
         return healthSystem;
     }
+    IEnumerator RespawnRoutine()
+    {
+        m_animator.SetTrigger("Death");
+
+        GetComponent<PlayerInput>().enabled = false;
+
+        GetComponent<Collider2D>().enabled = false;
+
+        yield return new WaitForSeconds(5f);
+
+        Respawn();
+    }
+    private void Respawn()
+    {
+        healthSystem.Heal(500f);
+
+        m_animator.SetTrigger("Recover");
+
+        GetComponent<Collider2D>().enabled = true;
+
+        GetComponent<PlayerInput>().enabled = true;
+
+        isDead = false;
+    }
+
 }
