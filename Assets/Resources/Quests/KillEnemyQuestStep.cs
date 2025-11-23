@@ -19,7 +19,10 @@ public class KillEnemyQuestStep : QuestStep
     {
         enemiesKilled++;
 
-        Debug.Log("Quest progress: " + enemiesKilled + "/" + enemiesToKill);
+        string progress = $"Quest progress: {enemiesKilled}/{enemiesToKill}";
+
+        QuestUI.instance.ShowQuestNotification(progress);
+        Debug.Log(progress);
 
         if (enemiesKilled >= enemiesToKill)
         {

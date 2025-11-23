@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FontObject
   - Enemies
+  - QuestCanvas
   layers:
   - Default
   - TransparentFX
