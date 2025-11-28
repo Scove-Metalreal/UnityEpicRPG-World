@@ -81,22 +81,27 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
 
     private void OnPlayerDead()
     {
+        inputVec = Vector2.zero;
+
+        m_body2d.linearVelocity = Vector2.zero;
+        m_body2d.bodyType = RigidbodyType2D.Kinematic;
+
         StartCoroutine(RespawnRoutine());
     }
     IEnumerator RespawnRoutine()
     {
         m_animator.SetTrigger("Death");
         GetComponent<PlayerInput>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(5.5f);
 
         model.Respawn(500);
     }
     private void OnPlayerRespawn()
     {
         m_animator.SetTrigger("Recover");
-        GetComponent<Collider2D>().enabled = true;
         GetComponent<PlayerInput>().enabled = true;
+
+        m_body2d.bodyType = RigidbodyType2D.Dynamic;
     }
 }
