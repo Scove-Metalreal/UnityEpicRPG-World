@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class BanditCombat : MonoBehaviour
 {
     [SerializeField] private Bandit player;
-    // public Animator animator;
 
     public Transform attackPoint;
     public LayerMask enemyLayers;

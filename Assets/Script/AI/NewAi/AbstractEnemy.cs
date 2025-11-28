@@ -36,7 +36,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     /// <summary>
     /// Health system for managing enemy health and death.
     /// </summary>
-    private HealthSystem healthSystem;
+    protected HealthSystem healthSystem;
 
     /// <summary>
     /// Initializes components and health system.
@@ -112,7 +112,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     /// <summary>
     /// Handles enemy death: plays animation, stops movement, destroys object.
     /// </summary>
-    private void HealthSystem_OnDead(object sender, System.EventArgs e)
+    public virtual void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
         anim.SetBool("Dead", true);
         Stop();
@@ -139,4 +139,12 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     /// </summary>
     /// <param name="targetPos">Target position for skill effect.</param>
     public abstract void PlaySkillEffect(Vector2 targetPos);
+    public virtual void SetAnimator(Animator a)
+    {
+        anim = a;
+    }
+    public virtual void SetSpriteRenderer(SpriteRenderer s)
+    {
+        sr = s;
+    }
 }
