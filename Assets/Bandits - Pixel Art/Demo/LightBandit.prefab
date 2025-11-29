@@ -11,10 +11,13 @@ GameObject:
   - component: {fileID: 4805181885227780}
   - component: {fileID: 95346456782871180}
   - component: {fileID: 212259381048184306}
+  - component: {fileID: 7050614205722010642}
   - component: {fileID: 50512961935941442}
-  - component: {fileID: 61252362154681264}
-  - component: {fileID: 114850797635947820}
-  m_Layer: 0
+  - component: {fileID: 6864833947542015801}
+  - component: {fileID: 3617884853309714427}
+  - component: {fileID: 8513949551651293432}
+  - component: {fileID: 4436141068869669874}
+  m_Layer: 6
   m_Name: LightBandit
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,9 +107,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1292774163
+  m_SortingLayer: 8
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,6 +121,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7050614205722010642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!50 &50512961935941442
 Rigidbody2D:
   serializedVersion: 5
@@ -133,7 +166,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -145,8 +178,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61252362154681264
-BoxCollider2D:
+--- !u!70 &6864833947542015801
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,19 +212,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02, y: 0.662}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1.28, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.8, y: 1.2}
-  m_EdgeRadius: 0
---- !u!114 &114850797635947820
+  m_Offset: {x: 0, y: 0.35546327}
+  m_Size: {x: 0.6, y: 0.91092634}
+  m_Direction: 0
+--- !u!114 &3617884853309714427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,11 +226,43 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba8b435a8dc3f604e9a13c4acd7081c2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bandit
   inputVec: {x: 0, y: 0}
-  m_animator: {fileID: 0}
+  m_animator: {fileID: 95346456782871180}
   m_speed: 4
   m_combatIdle: 0
+--- !u!114 &8513949551651293432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6763dded50e44468f41cab5a049312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BanditCombat
+  player: {fileID: 3617884853309714427}
+  attackPoint: {fileID: 5465685843185249311}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  attackRange: 0.5
+  attackDamage: 40
+  attackActionReference: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!114 &4436141068869669874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689866831511430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1412a6a61553894fb2d2153c0d1cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractUI
 --- !u!1 &4899257910758957895
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,9 +370,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1292774163
+  m_SortingLayer: 8
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1304559308, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

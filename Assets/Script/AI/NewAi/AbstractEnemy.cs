@@ -1,4 +1,4 @@
-using CodeMonkey.HealthSystemCM;
+﻿using CodeMonkey.HealthSystemCM;
 using UnityEngine;
 
 /// <summary>
@@ -59,6 +59,10 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     {
 
     }
+    protected virtual Animator GetAnimator()
+    {
+        return anim;
+    }
 
     /// <summary>
     /// Updates walking animation based on movement.
@@ -66,7 +70,11 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     protected virtual void FixedUpdate()
     {
         bool isWalking = Vector2.Distance(rb.position, lastPosition) > 0.001f;
-        anim.SetBool("isWalking", isWalking);
+        Animator a = GetAnimator();
+        if (a != null)
+            a.SetBool("isWalking", isWalking);
+        else
+            Debug.LogWarning($"{name}: Animator is NULL in FixedUpdate");
 
         lastPosition = rb.position;
     }
@@ -114,7 +122,12 @@ public abstract class AbstractEnemy : MonoBehaviour, IGetHealthSystem
     /// </summary>
     public virtual void HealthSystem_OnDead(object sender, System.EventArgs e)
     {
-        anim.SetBool("Dead", true);
+        Animator a = GetAnimator();
+        if (a != null)
+            a.SetBool("Dead", true);
+        else
+            Debug.LogWarning($"{name}: Animator is NULL in FixedUpdate");
+        // anim.SetBool("Dead", true);
         Stop();
 
         // Call game manager to increase kill count
