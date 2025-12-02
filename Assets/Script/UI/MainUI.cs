@@ -10,7 +10,7 @@ public class MainUI : MonoBehaviour
     public GameObject _mainMenuFirst;
     public GameObject _settingsMenuFirst;
     [Header("--------- Audio Sources ---------")]
-    public AudioManager audio;
+    public AudioManager aaudio;
     [Header("--------- Master Sound ---------")]
     public GameObject soundOn;
     public GameObject soundOff;
@@ -86,17 +86,17 @@ public class MainUI : MonoBehaviour
     }
     public void MusicToggle()
     {
-        if (audio != null && audio.musicSource != null && musicObjOn != null && musicObjOff != null)
+        if (aaudio != null && aaudio.musicSource != null && musicObjOn != null && musicObjOff != null)
         {
-            if (audio.musicSource.isPlaying)
+            if (aaudio.musicSource.isPlaying)
             {
-                audio.musicSource.Pause();
+                aaudio.musicSource.Pause();
                 musicObjOff.SetActive(true);
                 musicObjOn.SetActive(false);
             }
             else
             {
-                audio.musicSource.Play();
+                aaudio.musicSource.Play();
                 musicObjOff.SetActive(false);
                 musicObjOn.SetActive(true);
             }

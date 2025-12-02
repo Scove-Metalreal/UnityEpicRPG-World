@@ -935,7 +935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788a770dccce27045ae5b930a0826f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainUI
-  audio: {fileID: 0}
+  _mainMenuFirst: {fileID: 0}
+  _settingsMenuFirst: {fileID: 0}
+  aaudio: {fileID: 0}
   soundOn: {fileID: 0}
   soundOff: {fileID: 0}
   musicObjOn: {fileID: 0}
@@ -947,6 +949,8 @@ MonoBehaviour:
   pause: {fileID: 0}
   resume: {fileID: 0}
   settingPanel: {fileID: 931809104}
+  _playerMove: {fileID: 0}
+  _playerCombat: {fileID: 0}
 --- !u!1 &436871763
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788a770dccce27045ae5b930a0826f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainUI
-  audio: {fileID: 1650045450}
+  _mainMenuFirst: {fileID: 0}
+  _settingsMenuFirst: {fileID: 0}
+  aaudio: {fileID: 0}
   soundOn: {fileID: 1277678792}
   soundOff: {fileID: 137803663}
   musicObjOn: {fileID: 1326769575}
@@ -988,6 +994,8 @@ MonoBehaviour:
   pause: {fileID: 0}
   resume: {fileID: 0}
   settingPanel: {fileID: 931809104}
+  _playerMove: {fileID: 0}
+  _playerCombat: {fileID: 0}
 --- !u!4 &436871765
 Transform:
   m_ObjectHideFlags: 0
@@ -2238,7 +2246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788a770dccce27045ae5b930a0826f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainUI
-  audio: {fileID: 0}
+  _mainMenuFirst: {fileID: 0}
+  _settingsMenuFirst: {fileID: 0}
+  aaudio: {fileID: 0}
   soundOn: {fileID: 0}
   soundOff: {fileID: 0}
   musicObjOn: {fileID: 0}
@@ -2250,6 +2260,8 @@ MonoBehaviour:
   pause: {fileID: 0}
   resume: {fileID: 0}
   settingPanel: {fileID: 931809104}
+  _playerMove: {fileID: 0}
+  _playerCombat: {fileID: 0}
 --- !u!1 &997471870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2382,7 @@ PrefabInstance:
     - target: {fileID: 1849511696146131113, guid: 84868953106ca4e4195894b047d536bb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e153e7320d1c3b247b8dd9913128265a, type: 3}
+      objectReference: {fileID: 21300000, guid: 4ce0634a6bcefab4c8b2dd9468b7a46a, type: 3}
     - target: {fileID: 5555506632788074717, guid: 84868953106ca4e4195894b047d536bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4215,6 +4227,7 @@ MonoBehaviour:
   SFXSource: {fileID: 1963838061}
   background: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
   tension: {fileID: 8300000, guid: 5a1944aa7c9b294499f993b3c5b484f5, type: 3}
+  fadeDuration: 3
 --- !u!4 &1650045451
 Transform:
   m_ObjectHideFlags: 0
@@ -5169,6 +5182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1849511696146131113, guid: 84868953106ca4e4195894b047d536bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 561ce56b57e34e6499fda3c9e96b3559, type: 3}
     - target: {fileID: 5555506632788074717, guid: 84868953106ca4e4195894b047d536bb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5247,6 +5264,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5555506632788074717, guid: 84868953106ca4e4195894b047d536bb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218054025426803272, guid: 84868953106ca4e4195894b047d536bb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801428779041393118, guid: 84868953106ca4e4195894b047d536bb, type: 3}
