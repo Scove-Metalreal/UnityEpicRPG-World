@@ -9,6 +9,7 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
 
     public Animator             m_animator;
     private Rigidbody2D         m_body2d;
+    public bool isDead;
 
     private PlayerModel model;
 
@@ -76,9 +77,6 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     {
         return model.Health;
     }
-    
-
-
     private void OnPlayerDead()
     {
         inputVec = Vector2.zero;
@@ -90,7 +88,9 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     }
     IEnumerator RespawnRoutine()
     {
+        isDead = true;
         m_animator.SetTrigger("Death");
+        m_animator.SetBool("isDead", true);
         GetComponent<PlayerInput>().enabled = false;
 
         yield return new WaitForSeconds(5.5f);
@@ -99,9 +99,12 @@ public class Bandit : MonoBehaviour, IGetHealthSystem
     }
     private void OnPlayerRespawn()
     {
+        isDead = false;
         m_animator.SetTrigger("Recover");
+        m_animator.SetBool("isDead", false);
         GetComponent<PlayerInput>().enabled = true;
 
+        model.IsDead = false;   
         m_body2d.bodyType = RigidbodyType2D.Dynamic;
     }
 }

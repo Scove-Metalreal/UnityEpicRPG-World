@@ -61,6 +61,11 @@ public class QuestPoint : MonoBehaviour
             currentQuestState = quest.state;
             questIcon.SetState(currentQuestState, startPoint, finishPoint);
         }
+        if (currentQuestState == QuestState.FINISHED)
+        {
+            startPoint = false;
+            finishPoint = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)

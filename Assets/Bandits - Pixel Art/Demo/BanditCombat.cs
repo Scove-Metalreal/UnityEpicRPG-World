@@ -5,6 +5,7 @@ public class BanditCombat : MonoBehaviour
 {
     [SerializeField] private Bandit player;
 
+
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
