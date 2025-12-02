@@ -4,7 +4,7 @@ using CodeMonkey.HealthSystemCM;
 
 public class PlayerModel
 {
-    public bool IsDead { get; private set; }
+    public bool IsDead { get; set; }
     public float Speed { get; private set; }
 
     public HealthSystem Health { get; private set; }
